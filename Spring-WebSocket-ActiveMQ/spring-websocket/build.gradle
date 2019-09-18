@@ -1,0 +1,35 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.8.RELEASE'
+	}
+	
+    repositories {
+    	mavenLocal()
+    	mavenCentral()
+    }
+    
+    dependencies {
+    	classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 12
+targetCompatibility = 12
+
+repositories {
+	mavenLocal()
+    mavenCentral()
+    maven {
+    	url 'https://artifacts.alfresco.com/nexus/content/repositories/public/'
+    }
+}
+
+dependencies {
+	implementation("org.springframework.boot:spring-boot-starter-websocket:${springBootVersion}")
+	implementation("org.springframework.boot:spring-boot-starter-activemq:${springBootVersion}")
+	implementation("org.apache.activemq:activemq-stomp:5.15.10")
+    implementation("io.projectreactor.netty:reactor-netty:0.8.11.RELEASE")
+}
