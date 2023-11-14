@@ -12,7 +12,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
 	@Override
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
-		registry.addEndpoint("/websocket").setAllowedOrigins("*").withSockJS();
+		//registry.addEndpoint("/websocket").setAllowedOrigins("*").withSockJS(); // spring boot 2.x.x
+		registry.addEndpoint("/websocket").setAllowedOrigins("http://localhost:4200").withSockJS(); //spring boot 3.x.x
 	}
 
 	@Override
@@ -20,4 +21,5 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 		config.enableSimpleBroker("/topic");
 		config.setApplicationDestinationPrefixes("/app");
 	}
+
 }
