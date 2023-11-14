@@ -1,1 +1,1 @@
-You can read tutorial https://www.roytuts.com/spring-boot-websocket-angularjs-gradle-example/
+Please follow the tutorial https://roytuts.com/spring-boot-websocket-angular/
